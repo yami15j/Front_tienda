@@ -2,110 +2,111 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f2f4f7;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 30px 20px;
-  background: #f0f2f5;
-  min-height: 100vh;
+  padding: 40px 20px;
 }
 
 h1 {
   text-align: center;
-  color: #222;
-  margin-bottom: 40px;
   font-size: 3em;
+  color: #2c3e50;
+  margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
 .debug {
   text-align: center;
-  background: #cce5ff;
-  color: #004085;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #d1ecf1;
+  color: #0c5460;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .seccion {
-  background: white;
-  padding: 25px 20px;
-  border-radius: 12px;
-  margin-bottom: 35px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 h2 {
-  color: #333;
-  margin-bottom: 25px;
   font-size: 1.8em;
-  border-left: 6px solid #6c63ff;
-  padding-left: 15px;
+  color: #34495e;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
 }
 
 .productos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .producto {
-  background: #fff;
+  background: #f9fbfd;
   border-radius: 12px;
   padding: 20px;
   text-align: center;
-  border: 1px solid #eee;
-  transition: all 0.3s;
+  border: 1px solid #e1e4e8;
+  transition: all 0.3s ease;
 }
 
 .producto:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border-color: #6c63ff;
 }
 
 .producto h3 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  color: #444;
+  font-size: 1.3em;
+  color: #2c3e50;
+  margin-bottom: 12px;
 }
 
 .precio {
-  color: #6c63ff;
-  font-size: 1.6em;
+  font-size: 1.5em;
+  color: #3498db;
   font-weight: 700;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 button {
-  background: #6c63ff;
-  color: #fff;
+  background: #3498db;
+  color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 22px;
+  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #5950d4;
+  background: #2980b9;
 }
 
 .carrito-seccion {
-  background: #fff7f0;
+  background: #fef9f2;
 }
 
 .vacio {
   text-align: center;
-  padding: 40px 20px;
-  color: #999;
+  padding: 35px;
   font-size: 1.2em;
+  color: #7f8c8d;
 }
 
 .item {
@@ -113,57 +114,57 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: #fafafa;
   margin-bottom: 12px;
+  background: #ffffff;
   border-radius: 10px;
-  border-left: 4px solid #6c63ff;
+  border-left: 5px solid #3498db;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .item span:first-child {
   font-weight: 600;
-  color: #333;
+  color: #2c3e50;
 }
 
 .item span:nth-child(2) {
-  color: #6c63ff;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 700;
+  color: #3498db;
 }
 
 .btn-eliminar {
-  background: #ff4d4d;
-  padding: 6px 18px;
+  background: #e74c3c;
+  padding: 6px 16px;
   border-radius: 6px;
   font-size: 1em;
 }
 
 .btn-eliminar:hover {
-  background: #e04343;
+  background: #c0392b;
 }
 
 .total {
   margin-top: 25px;
   padding: 20px;
-  background: #fafafa;
+  background: #ffffff;
   border-radius: 12px;
   text-align: right;
-  border-left: 5px solid #6c63ff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .total h3 {
-  color: #6c63ff;
+  color: #3498db;
   font-size: 1.8em;
   margin-bottom: 15px;
 }
 
 .btn-vaciar {
-  background: #ffa500;
+  background: #f39c12;
   padding: 12px 30px;
   border-radius: 8px;
 }
 
 .btn-vaciar:hover {
-  background: #e68a00;
+  background: #d68910;
 }
 
 @media (max-width: 768px) {

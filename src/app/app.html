@@ -1,93 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda González</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-container">
-      <div class="logo-section">
-        <h1 class="logo">Tienda González</h1>
-        <p class="subtitle">Tu tecnología favorita</p>
-      </div>
-      
-      <button class="btn-carrito" id="btnCarrito">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span class="btn-text">Carrito</span>
-        <span class="badge" id="badge">0</span>
-      </button>
-    </div>
-  </header>
+<div class="container">
+  <h1> Tienda Gonzalez</h1>
 
-  <!-- Productos -->
-  <main class="main-content">
-    <div class="productos-header">
-      <h2 class="titulo-seccion">Productos Disponibles</h2>
-      <div class="linea-decorativa"></div>
-    </div>
+  <div class="debug">
+    <p> Productos de la tienda Gonzalez</p>
+  </div>
 
-    <div class="productos-grid" id="productosGrid">
-      <!-- Los productos se cargan con JavaScript -->
-    </div>
-  </main>
-
-  <!-- Panel lateral del carrito -->
-  <div class="carrito-panel" id="carritoPanel">
-    <div class="carrito-contenedor">
-      <!-- Header del carrito -->
-      <div class="carrito-header">
-        <h2 class="carrito-titulo">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          Mi Carrito
-        </h2>
-        <button class="btn-cerrar" id="btnCerrar">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Contenido del carrito -->
-      <div class="carrito-items" id="carritoItems">
-        <!-- Los items se cargan con JavaScript -->
-      </div>
-
-      <!-- Footer con total -->
-      <div class="carrito-footer" id="carritoFooter">
-        <div class="total-seccion">
-          <span class="total-label">Total:</span>
-          <span class="total-precio" id="totalPrecio">$0</span>
-        </div>
-        
-        <button class="btn-vaciar" id="btnVaciar">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-          </svg>
-          Vaciar Carrito
-        </button>
-        
-        <button class="btn-pagar">Proceder al Pago</button>
+  <!-- PRODUCTOS -->
+  <div class="seccion">
+    <h2>Productos Disponibles</h2>
+    <div class="productos">
+      <div class="producto" *ngFor="let p of productos">
+        <h3>{{ p.nombre }}</h3>
+        <p class="precio">${{ p.precio }}</p>
+        <button (click)="agregarAlCarrito(p)">Agregar</button>
       </div>
     </div>
   </div>
 
-  <!-- Overlay -->
-  <div class="overlay" id="overlay"></div>
+  
+  <div class="seccion carrito-seccion">
+    <h2>Mi Carrito</h2>
+    
+    <div *ngIf="carrito.length === 0" class="vacio">
+      El carrito está vacío
+    </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <div *ngIf="carrito.length > 0">
+      <div class="item" *ngFor="let item of carrito; let i = index">
+        <span>{{ item.nombre }}</span>
+        <span>${{ item.precio }}</span>
+        <button class="btn-eliminar" (click)="eliminar(i)"></button>
+      </div>
+
+      <div class="total">
+        <h3>Total: ${{ total }}</h3>
+        <button class="btn-vaciar" (click)="vaciar()">Vaciar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <h1> Tienda Gonzalez</h1>
+
+  <div class="debug">
+    <p> Productos de la tienda Gonzalez</p>
+  </div>
+
+  <!-- PRODUCTOS -->
+  <div class="seccion">
+    <h2>Productos Disponibles</h2>
+    <div class="productos">
+      <div class="producto" *ngFor="let p of productos">
+        <h3>{{ p.nombre }}</h3>
+        <p class="precio">${{ p.precio }}</p>
+        <button (click)="agregarAlCarrito(p)">Agregar</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="seccion carrito-seccion">
+    <h2>Mi Carrito</h2>
+    
+    <div *ngIf="carrito.length === 0" class="vacio">
+      El carrito está vacío
+    </div>
+
+    <div *ngIf="carrito.length > 0">
+      <div class="item" *ngFor="let item of carrito; let i = index">
+        <span>{{ item.nombre }}</span>
+        <span>${{ item.precio }}</span>
+        <button class="btn-eliminar" (click)="eliminar(i)"></button>
+      </div>
+
+      <div class="total">
+        <h3>Total: ${{ total }}</h3>
+        <button class="btn-vaciar" (click)="vaciar()">Vaciar</button>
+      </div>
+    </div>
+  </div>
+</div>

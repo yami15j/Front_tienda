@@ -1,114 +1,126 @@
+/* Fuente y reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background: #f2f4f7;
+  background: #eceff1;
 }
 
+/* Contenedor principal */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
+/* Título principal */
 h1 {
   text-align: center;
   font-size: 3em;
-  color: #2c3e50;
-  margin-bottom: 30px;
+  color: #1b263b;
+  margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
+/* Barra de información debug */
 .debug {
   text-align: center;
-  background: #d1ecf1;
-  color: #0c5460;
-  padding: 15px 20px;
-  border-radius: 10px;
+  background: #ffeaa7;
+  color: #2d3436;
+  padding: 12px 25px;
+  border-radius: 12px;
   font-weight: 600;
-  margin-bottom: 40px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  margin-bottom: 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Secciones */
 .seccion {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 15px;
+  padding: 30px 25px;
+  border-radius: 20px;
   margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 h2 {
   font-size: 1.8em;
   color: #34495e;
   margin-bottom: 25px;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 10px;
+  border-left: 6px solid #e84393;
+  padding-left: 15px;
 }
 
+/* Grid de productos */
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
+/* Tarjetas de producto */
 .producto {
-  background: #f9fbfd;
-  border-radius: 12px;
+  background: linear-gradient(145deg, #f8f9fa, #e0f7fa);
+  border-radius: 18px;
   padding: 20px;
   text-align: center;
-  border: 1px solid #e1e4e8;
+  border: 1px solid #dfe6e9;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .producto:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
+/* Nombre y precio */
 .producto h3 {
   font-size: 1.3em;
-  color: #2c3e50;
-  margin-bottom: 12px;
+  color: #2d3436;
+  margin-bottom: 10px;
 }
 
 .precio {
   font-size: 1.5em;
-  color: #3498db;
+  color: #e84393;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
+/* Botones */
 button {
-  background: #3498db;
+  background: #e84393;
   color: white;
   border: none;
   padding: 10px 22px;
   font-size: 16px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #2980b9;
+  background: #d6306a;
 }
 
+/* Carrito */
 .carrito-seccion {
-  background: #fef9f2;
+  background: #fff0f5;
 }
 
 .vacio {
   text-align: center;
-  padding: 35px;
+  padding: 35px 20px;
   font-size: 1.2em;
-  color: #7f8c8d;
+  color: #636e72;
 }
 
+/* Items del carrito */
 .item {
   display: flex;
   justify-content: space-between;
@@ -116,23 +128,23 @@ button:hover {
   padding: 15px 20px;
   margin-bottom: 12px;
   background: #ffffff;
-  border-radius: 10px;
-  border-left: 5px solid #3498db;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  border-left: 5px solid #e84393;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .item span:first-child {
   font-weight: 600;
-  color: #2c3e50;
+  color: #2d3436;
 }
 
 .item span:nth-child(2) {
   font-weight: 700;
-  color: #3498db;
+  color: #e84393;
 }
 
 .btn-eliminar {
-  background: #e74c3c;
+  background: #d63031;
   padding: 6px 16px;
   border-radius: 6px;
   font-size: 1em;
@@ -142,31 +154,33 @@ button:hover {
   background: #c0392b;
 }
 
+/* Total y vaciar */
 .total {
   margin-top: 25px;
   padding: 20px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: right;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .total h3 {
-  color: #3498db;
+  color: #e84393;
   font-size: 1.8em;
   margin-bottom: 15px;
 }
 
 .btn-vaciar {
-  background: #f39c12;
+  background: #fd9644;
   padding: 12px 30px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .btn-vaciar:hover {
-  background: #d68910;
+  background: #fc7d03;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .productos {
     grid-template-columns: 1fr;

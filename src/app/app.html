@@ -1,42 +1,66 @@
 <div class="container">
- 
-  <h1> Tienda Gonzalez</h1>
 
-  <div class="debug">
-    <p> Productos de la tienda Gonzalez</p>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="brand">
+      <span class="logo">🛒</span>
+      <h1>LOCAL JUMBO</h1>
+    </div>
+    <p class="subtitle">Tu tienda de confianza, rápido y sencillo</p>
+  </header>
+
+  <!-- MENSAJE -->
+  <div class="info">
+    <p>Selecciona los productos que deseas y revisa tu compra al instante</p>
   </div>
 
   <!-- PRODUCTOS -->
-  <div class="seccion">
-    <h2>Productos Disponibles</h2>
-    <div class="productos">
-      <div class="producto" *ngFor="let p of productos">
-        <h3>{{ p.nombre }}</h3>
-        <p class="precio">${{ p.precio }}</p>
-        <button (click)="agregarAlCarrito(p)">Agregar</button>
-      </div>
-    </div>
-  </div>
+  <section class="seccion">
+    <h2>Catálogo de Productos</h2>
 
-  
-  <div class="seccion carrito-seccion">
-    <h2>Mi Carrito</h2>
-    
+    <div class="productos">
+      <article class="producto" *ngFor="let p of productos">
+        <h3>{{ p.nombre }}</h3>
+        <p class="precio">$ {{ p.precio }}</p>
+
+        <button (click)="agregarAlCarrito(p)">
+          ➕ Añadir
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- CARRITO -->
+  <section class="seccion carrito">
+    <h2>Resumen de Compra</h2>
+
     <div *ngIf="carrito.length === 0" class="vacio">
-      El carrito está vacío
+      No has agregado productos todavía
     </div>
 
     <div *ngIf="carrito.length > 0">
+
       <div class="item" *ngFor="let item of carrito; let i = index">
-        <span>{{ item.nombre }}</span>
-        <span>${{ item.precio }}</span>
-        <button class="btn-eliminar" (click)="eliminar(i)"></button>
+        <div>
+          <strong>{{ item.nombre }}</strong>
+          <span>$ {{ item.precio }}</span>
+        </div>
+
+        <button class="btn-eliminar" (click)="eliminar(i)">
+          Quitar
+        </button>
       </div>
 
       <div class="total">
-        <h3>Total: ${{ total }}</h3>
-        <button class="btn-vaciar" (click)="vaciar()">Vaciar</button>
+        <p>Total a pagar</p>
+        <h3>$ {{ total }}</h3>
+
+        <button class="btn-vaciar" (click)="vaciar()">
+          Vaciar compra
+        </button>
       </div>
+
     </div>
-  </div>
+  </section>
+
 </div>
